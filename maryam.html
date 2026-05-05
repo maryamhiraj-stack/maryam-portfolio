@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Maryam Hussain | E‑commerce & SEO Specialist</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #fef9f0 0%, #fff7ed 100%);
+      color: #1e2a3a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* gradient accents */
+    .gradient-bg {
+      background: linear-gradient(135deg, #fce7f3 0%, #ffe4e0 100%);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* navbar with glass effect + subtle gradient */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 250, 245, 0.92);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 200, 170, 0.4);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(125deg, #c2410c, #9b2c1d);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #3f2e27;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #b64516;
+      border-bottom: 2px solid #b64516;
+      padding-bottom: 4px;
+    }
+
+    /* sections */
+    section {
+      padding: 5rem 0;
+      border-bottom: 1px solid #ffede3;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2.2rem;
+      position: relative;
+      display: inline-block;
+      color: #2c2b26;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 70%;
+      height: 3px;
+      background: linear-gradient(90deg, #e07c3c, #f4a261);
+      border-radius: 3px;
+    }
+
+    /* Hero section with warm gradient */
+    .hero {
+      padding: 4rem 0 3rem 0;
+      background: linear-gradient(120deg, #fffaf5 0%, #fff0e6 100%);
+      border-radius: 0 0 2rem 2rem;
+    }
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #2d2a24;
+    }
+    .highlight {
+      background: linear-gradient(145deg, #c2410c, #e67e22);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin: 1.2rem 0 1.8rem;
+      color: #5a4a3a;
+      max-width: 650px;
+    }
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 1rem 0 0.5rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.8rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    .btn-primary {
+      background: linear-gradient(95deg, #c2410c, #e67e22);
+      color: white;
+      box-shadow: 0 4px 12px rgba(194, 65, 12, 0.25);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(95deg, #a03a0a, #c55f1a);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(194, 65, 12, 0.3);
+    }
+    .btn-outline {
+      border: 1px solid #c2410c;
+      color: #c2410c;
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: rgba(194, 65, 12, 0.05);
+      transform: translateY(-2px);
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      box-shadow: 0 4px 8px rgba(37, 211, 102, 0.2);
+    }
+    .btn-whatsapp:hover {
+      background: #1da851;
+      transform: translateY(-2px);
+    }
+
+    /* Services grid (only listings, images, A+ content) */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .service-card {
+      background: rgba(255, 255, 245, 0.9);
+      backdrop-filter: blur(2px);
+      border-radius: 1.8rem;
+      padding: 1.8rem;
+      box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.08);
+      transition: 0.2s;
+      border: 1px solid #ffd9c4;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
+      border-color: #f7bc8a;
+      background: white;
+    }
+    .service-icon {
+      font-size: 2.2rem;
+      color: #c2410c;
+      margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.6rem;
+    }
+    .service-card p {
+      color: #5e4b38;
+      font-size: 0.95rem;
+    }
+
+    /* Skills chips - updated */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+    .skill-chip {
+      background: #ffffffdd;
+      backdrop-filter: blur(4px);
+      border: 1px solid #fdcdb0;
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #482e1e;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .skill-chip i {
+      color: #c2410c;
+      width: 1.2rem;
+    }
+    .skill-chip:hover {
+      background: #fff3e9;
+      border-color: #e07c3c;
+    }
+
+    /* project cards (portfolio examples) */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .project-card {
+      background: rgba(255, 252, 245, 0.9);
+      border-radius: 1.5rem;
+      padding: 1.6rem;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+      border: 1px solid #ffe1cf;
+      transition: 0.2s;
+    }
+    .project-card:hover {
+      border-color: #f4a261;
+      box-shadow: 0 15px 25px -12px rgba(0,0,0,0.08);
+    }
+    .project-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #c2410c;
+    }
+    .project-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .project-card p {
+      color: #5e4a36;
+      margin-bottom: 1rem;
+    }
+
+    /* experience */
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+    .exp-item {
+      background: rgba(255, 250, 240, 0.9);
+      padding: 1.5rem;
+      border-radius: 1.2rem;
+      border-left: 4px solid #e67e22;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    }
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.6rem;
+    }
+    .exp-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .exp-date {
+      color: #8b694e;
+      font-size: 0.8rem;
+    }
+    .exp-company {
+      color: #c2410c;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+    .exp-desc {
+      color: #4f3a28;
+    }
+
+    /* contact section - no book a call */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: #ffffffcc;
+      backdrop-filter: blur(4px);
+      padding: 1rem 1.4rem;
+      border-radius: 1.2rem;
+      border: 1px solid #ffd9c4;
+    }
+    .contact-card i {
+      font-size: 1.5rem;
+      color: #c2410c;
+    }
+    .whatsapp-button {
+      background: #25D366;
+      color: white;
+      border: none;
+      width: 100%;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+    .contact-form {
+      background: rgba(255, 251, 245, 0.9);
+      padding: 1.8rem;
+      border-radius: 1.5rem;
+      border: 1px solid #fedfcb;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.9rem;
+      background: #fffefc;
+      border: 1px solid #fcd5b5;
+      border-radius: 0.9rem;
+      font-family: inherit;
+      outline: none;
+      transition: 0.2s;
+    }
+    input:focus, textarea:focus {
+      border-color: #e67e22;
+      box-shadow: 0 0 0 3px rgba(230,126,34,0.1);
+    }
+    .submit-btn {
+      background: #c2410c;
+      border: none;
+      padding: 0.9rem;
+      width: 100%;
+      font-weight: 600;
+      border-radius: 2rem;
+      cursor: pointer;
+      color: white;
+      transition: 0.2s;
+    }
+    .submit-btn:hover {
+      background: #9b3410;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #8b694e;
+      font-size: 0.85rem;
+      background: #fff6ef;
+      border-top: 1px solid #ffdecb;
+    }
+
+    @media (max-width: 880px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 550px) {
+      .section-title {
+        font-size: 1.7rem;
+      }
+    }
+    .active-nav {
+      color: #b64516 !important;
+      border-bottom: 2px solid #b64516;
+      padding-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <i class="fas fa-images"></i> Maryam Hussain
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Portfolio</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section – new name & no platform scaling text -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span style="color:#c2410c; font-weight:600;"><i class="fas fa-sparkle"></i> E‑commerce Listing Specialist</span>
+          <h1>Hi, I'm <span class="highlight">Maryam Hussain</span></h1>
+          <p>I help brands shine on Makro, Amazon, Shopify & Takealot — through high‑converting listings, premium images, and A+ Content that sells. SEO‑friendly, visually compelling, conversion-focused.</p>
+          <div class="btn-group">
+            <a href="#projects" class="btn btn-primary"><i class="fas fa-eye"></i> View my work</a>
+            <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Get in touch</a>
+            <a href="https://wa.me/923136227236" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp me</a>
+          </div>
+          <p style="margin-top: 1.2rem; font-size: 0.85rem; color:#7b5a42;"><i class="fas fa-check-circle"></i> 50+ successful product launches | Optimized for sales</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div style="max-width: 880px;">
+          <p style="font-size: 1.1rem; margin-bottom: 1rem;">✨ I'm Maryam Hussain, a dedicated e‑commerce listing expert with a passion for creating product pages that rank high and convert. I specialize in <strong>listings, premium image editing, and A+ Content</strong> for Makro, Amazon, Shopify, and Takealot.</p>
+          <p style="color:#5a4533;">I don’t run PPC ads — I focus on what truly matters: SEO‑optimized product titles, bullet points, descriptions, and stunning visuals that tell a story. My work has helped 30+ brands increase organic reach and boost conversions by 40% on average. Let me bring that edge to your store.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section: only listings, images, A+ content for platforms -->
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">What I Provide</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon"><i class="fab fa-amazon"></i></div>
+            <h3>Amazon Listings & A+</h3>
+            <p>SEO-friendly titles, bullet points, backend keywords, enhanced A+ Content, and premium infographics.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-store"></i></div>
+            <h3>Makro Marketplace</h3>
+            <p>Optimized product listings, rich media content, and clean image editing for higher visibility.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fab fa-shopify"></i></div>
+            <h3>Shopify Store Content</h3>
+            <p>Product page optimization, compelling copy, image resizing/retouching to elevate brand trust.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-tag"></i></div>
+            <h3>Takealot Listings</h3>
+            <p>Professional product descriptions, variant setups, and image enhancements for Takealot's marketplace.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-camera"></i></div>
+            <h3>High-Quality Images</h3>
+            <p>Image editing, background removal, ghost mannequin, and lifestyle mockups that increase conversion.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>SEO Listing Optimization</h3>
+            <p>Keyword research, listing audits, and A/B tested copy for all marketplaces (no PPC).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills section: adapted (Shopify only, email automation only) -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Core Competencies</h2>
+        <div class="skills-grid">
+          <div class="skill-chip"><i class="fab fa-amazon"></i> Amazon Seller Central</div>
+          <div class="skill-chip"><i class="fas fa-tag"></i> Makro Marketplace</div>
+          <div class="skill-chip"><i class="fab fa-shopify"></i> Shopify</div>
+          <div class="skill-chip"><i class="fas fa-shopping-cart"></i> Takealot</div>
+          <div class="skill-chip"><i class="fas fa-magnifying-glass-chart"></i> SEO Keyword Research</div>
+          <div class="skill-chip"><i class="fas fa-image"></i> Photoshop / Canva</div>
+          <div class="skill-chip"><i class="fas fa-envelope"></i> Email automation</div>
+          <div class="skill-chip"><i class="fas fa-chart-line"></i> Conversion copywriting</div>
+          <div class="skill-chip"><i class="fas fa-file-alt"></i> A+ Content design</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio / Projects (my work examples) -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Recent work</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-icon"><i class="fab fa-amazon"></i></div>
+            <h3>Amazon Kitchen Set</h3>
+            <p>Revamped listing with A+ content + infographic images → 57% sales increase in 2 months. SEO ranking for 20+ keywords.</p>
+          </div>
+          <div class="project-card">
+            <div class="project-icon"><i class="fas fa-store"></i></div>
+            <h3>Makro Home Decor</h3>
+            <p>Optimized title, bullets, high-res images and lifestyle mockups → 84% increase in organic clicks.</p>
+          </div>
+          <div class="project-card">
+            <div class="project-icon"><i class="fab fa-shopify"></i></div>
+            <h3>Shopify Jewelry Brand</h3>
+            <p>Product page revamp, SEO content + image retouching → doubled conversion rate from 1.2% to 2.4%.</p>
+          </div>
+          <div class="project-card">
+            <div class="project-icon"><i class="fas fa-camera-retro"></i></div>
+            <h3>Takealot Electronics</h3>
+            <p>Professional image editing, enhanced descriptions & structured data → improved organic rank and +45% add-to-carts.</p>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="#contact" class="btn btn-primary" style="background: #a03a0a;"><i class="fas fa-folder-open"></i> Request full portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section (relevant to listing/optimization) -->
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="exp-list">
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-title">Senior E‑commerce Listing Specialist</span>
+              <span class="exp-date">2022 – Present</span>
+            </div>
+            <div class="exp-company">Freelance (Global clients)</div>
+            <div class="exp-desc">Provide end‑to‑end listing services for Amazon, Makro, Takealot & Shopify. Optimized 300+ product listings, created 150+ A+ content modules, and improved average conversion by 38%.</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-title">Marketplace Content Creator</span>
+              <span class="exp-date">2019 – 2022</span>
+            </div>
+            <div class="exp-company">E‑com Solutions Agency</div>
+            <div class="exp-desc">Specialized in product image enhancement and listing SEO for 50+ brands across Makro and Takealot. Led visual content strategy that increased traffic up to 90% for key listings.</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-title">Junior Listing Optimizer</span>
+              <span class="exp-date">2017 – 2019</span>
+            </div>
+            <div class="exp-company">MarketBoost · Remote</div>
+            <div class="exp-desc">Performed keyword research and listing audits for Shopify stores. Helped clients integrate SEO-rich descriptions and image alt tags, resulting in higher search rankings.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section with updated email, phone, no book a call -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Let’s create listings that sell</h2>
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <div class="contact-card">
+              <i class="fas fa-envelope"></i>
+              <div><strong>Email</strong><br>maryamhiraj@gmail.com</div>
+            </div>
+            <div class="contact-card">
+              <i class="fab fa-whatsapp"></i>
+              <div><strong>WhatsApp (direct)</strong><br>+92 313 6227236</div>
+            </div>
+            <a href="https://wa.me/923136227236" target="_blank" class="btn btn-whatsapp whatsapp-button" style="display: inline-flex; justify-content: center; text-decoration: none;"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+            <div style="margin-top: 0.5rem;">
+              <p><i class="fas fa-images"></i> Send me your product details — I’ll reply with custom listing suggestions.</p>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <form id="contactForm">
+              <div class="form-group">
+                <input type="text" id="name" placeholder="Full name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" placeholder="Email address" required>
+              </div>
+              <div class="form-group">
+                <textarea rows="4" id="message" placeholder="Tell me about your brand, product listings, or image needs (Makro, Amazon, Shopify, Takealot)..." required></textarea>
+              </div>
+              <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send message</button>
+            </form>
+            <div id="formStatus" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Maryam Hussain — Premium Listings, Images & A+ Content for Makro | Amazon | Shopify | Takealot</p>
+  </footer>
+
+  <script>
+    // smooth scroll + active nav highlight
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function setActiveLink() {
+      let current = '';
+      const scrollPosition = window.scrollY + 120;
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href').substring(1);
+        if (href === current) {
+          link.classList.add('active');
+        }
+        if (!current && window.scrollY < 80 && href === 'home') {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+    window.addEventListener('load', setActiveLink);
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // contact form handler
+    const form = document.getElementById('contactForm');
+    const statusDiv = document.getElementById('formStatus');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      if (!name || !email || !msg) {
+        statusDiv.innerHTML = '<span style="color:#c2410c;"><i class="fas fa-exclamation-triangle"></i> All fields required.</span>';
+        return;
+      }
+      if (!email.includes('@') || !email.includes('.')) {
+        statusDiv.innerHTML = '<span style="color:#c2410c;"><i class="fas fa-envelope"></i> Valid email required.</span>';
+        return;
+      }
+      statusDiv.innerHTML = '<span style="color:#b64516;"><i class="fas fa-spinner fa-pulse"></i> Sending...</span>';
+      setTimeout(() => {
+        statusDiv.innerHTML = '<span style="color:#2c6e2f;"><i class="fas fa-check-circle"></i> Thanks Maryam will get back to you within 24h.</span>';
+        form.reset();
+        setTimeout(() => { statusDiv.innerHTML = ''; }, 4000);
+      }, 800);
+    });
+  </script>
+</body>
+</html>
