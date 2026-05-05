@@ -1,2 +1,0 @@
-# maryam-portfolio
-my cv
